@@ -1,5 +1,12 @@
 # @snickbit/fa-gen Changelog
 
+## 1.1.72
+
+### Patch Changes
+
+- [378b151](https://github.com/snickbit/fa-gen/commit/378b151) **chore**:  commit lock file
+- [51641a3](https://github.com/snickbit/fa-gen/commit/51641a3) **fix**:  publish templates
+
 ## 1.1.61
 
 ### Patch Changes
