@@ -16,4 +16,9 @@ dist/
 bin/
 
 # Keep
-!.gitignore
+!.git*
+!.*ignore
+!.*rc*
+
+# Forced
+.npmrc

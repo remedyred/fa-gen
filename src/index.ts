@@ -18,9 +18,9 @@ export async function useFa(app, icon_aliases): Promise<void> {
 
 	const definitions = (library as unknown as Library)?.definitions || {}
 
-	let iconDefaultPrefixes = {}
-	for (let [prefixName, prefixGroup] of Object.entries(definitions)) {
-		for (let prefixIconName in prefixGroup) {
+	const iconDefaultPrefixes = {}
+	for (const [prefixName, prefixGroup] of Object.entries(definitions)) {
+		for (const prefixIconName in prefixGroup) {
 			(iconDefaultPrefixes[prefixIconName] = iconDefaultPrefixes[prefixIconName] || []).push(prefixName)
 		}
 	}
@@ -35,7 +35,7 @@ export async function useFa(app, icon_aliases): Promise<void> {
 			ligatures = [0, 0]
 		}
 		if (Array.isArray(svgPathData)) {
-			for (let svgIndex of svgPathData.keys()) {
+			for (const svgIndex of svgPathData.keys()) {
 				if (!svgPathData[svgIndex].includes('@@fill: var')) {
 					if (svgIndex === 0) {
 						svgPathData[svgIndex] += '@@fill: var(--fa-secondary-color, currentColor);opacity: 0.4;opacity: var(--fa-secondary-opacity, 0.4);'
@@ -89,8 +89,8 @@ export async function useFa(app, icon_aliases): Promise<void> {
 	app.config.globalProperties.$q.iconSet.set(default_icon_map)
 
 	app.config.globalProperties.$q.iconMapFn = icon_name => {
-		let parsedIconName = parseIconName(icon_name)
-		let foundIcon = icon(parsedIconName)
+		const parsedIconName = parseIconName(icon_name)
+		const foundIcon = icon(parsedIconName)
 		if (foundIcon) {
 			return {
 				cls: 'svg-inline--fa',

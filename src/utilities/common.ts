@@ -120,8 +120,8 @@ export function saveConfig(conf) {
 }
 
 export function iconExists(icon: string) {
-	let config = useConfig()
-	let iconName = cleanIconName(icon)
+	const config = useConfig()
+	const iconName = cleanIconName(icon)
 	const reg = new RegExp(`^fa[a-z]?:(${iconName})$`)
 	return config.icons.find(i => reg.test(i))
 }
@@ -139,18 +139,18 @@ export function normalizeIconName(icon_name: string): string {
 }
 
 export function parseIcon(raw_icon_name) {
-	let config = useConfig()
+	const config = useConfig()
 
-	let normalizedIconName = normalizeIconName(raw_icon_name)
+	const normalizedIconName = normalizeIconName(raw_icon_name)
 	let [prefix, name] = normalizedIconName.split(':')
 
 	if (prefix === 'fa' && config.default) {
 		prefix = config.default
 	}
 
-	let import_name = camelCase(`fa-${name}`)
-	let prefixed_name = camelCase(`${prefix}-${name}`)
-	let import_path = `@fortawesome/${icon_prefix_types[prefix] || icon_prefix_types['fa']}`
+	const import_name = camelCase(`fa-${name}`)
+	const prefixed_name = camelCase(`${prefix}-${name}`)
+	const import_path = `@fortawesome/${icon_prefix_types[prefix] || icon_prefix_types['fa']}`
 
 	return {
 		id: normalizedIconName,
@@ -174,7 +174,7 @@ export function getImportString(icon) {
 export function getStringContent(content, config) {
 	let contentString
 
-	let iconAliases = {...default_icon_aliases, ...config.aliases}
+	const iconAliases = {...default_icon_aliases, ...config.aliases}
 	const aliases_string = `const icon_aliases = ${JSON.stringify(iconAliases, null, 2)}`
 
 	if (config.isQuasar) {
