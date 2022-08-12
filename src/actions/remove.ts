@@ -21,12 +21,12 @@ export default {
 		.run()
 		.then(async args => {
 			const config = await initConfig()
-			let changes = {
+			const changes = {
 				icons: 0,
 				aliases: 0
 			}
 
-			for (let subject of args.subjects) {
+			for (const subject of args.subjects) {
 				const icon = parseIcon(subject)
 				const iconPredicate = i => i === icon.id || i === icon.name || i === `fa:${icon.name}`
 				if (!args.alias) {

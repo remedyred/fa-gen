@@ -20,7 +20,7 @@ export default async argv => cli(argv)
 		}
 	}).run().then(async args => {
 		const config = await initConfig()
-		let changes = {
+		const changes = {
 			icons: 0,
 			aliases: 0
 		}
@@ -29,8 +29,8 @@ export default async argv => cli(argv)
 
 		const shouldAddAlias = async alias => !config.aliases[alias] || args.force || await confirm(`Alias {magenta}${alias}{/magenta} already exists for icon {cyan}${config.aliases[alias]}{/cyan}, overwrite?`)
 
-		for (let item of args.icons) {
-			let [icon, ...aliases] = item.split(',')
+		for (const item of args.icons) {
+			const [icon, ...aliases] = item.split(',')
 
 			let iconName = cleanIconName(icon)
 			if (!iconExists(iconName)) {
@@ -92,7 +92,7 @@ export default async argv => cli(argv)
 			}
 
 			if (!isEmpty(aliases)) {
-				for (let alias of aliases) {
+				for (const alias of aliases) {
 					if (config.aliases[alias] !== iconName && await shouldAddAlias(alias)) {
 						config.aliases[alias] = iconName
 						$out.v().success(`Added alias {magenta}${alias}{/magenta}`)
