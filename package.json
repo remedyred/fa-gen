@@ -59,7 +59,7 @@
 		"isomorphic-unfetch": "^3.1.0"
 	},
 	"devDependencies": {
-		"@snickbit/eslint-config": "0.0.7",
+		"@snickbit/eslint-config": "0.0.10",
 		"@snickbit/indexer": "2.5.7",
 		"@types/node": "18.6.4",
 		"@typescript-eslint/eslint-plugin": "5.33.0",
