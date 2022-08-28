@@ -16,8 +16,9 @@ bin/
 
 # Keep
 !.git*
-!.*ignore
 !.*rc*
+!.*ignore
+!.*config
 
-# Forced
+# Force
 .npmrc
