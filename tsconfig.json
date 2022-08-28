@@ -1,20 +1,35 @@
 {
-	"include": [
-		"src/**/*.ts"
-	],
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
+		"allowJs": true,
 		"declaration": true,
 		"declarationMap": true,
-		"removeComments": true,
-		"target": "es2020",
+		"downlevelIteration": true,
+		"emitDeclarationOnly": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "commonjs",
 		"moduleResolution": "node",
 		"newLine": "lf",
-		"module": "commonjs",
-		"downlevelIteration": true,
-		"sourceMap": true,
 		"noImplicitAny": false,
 		"noImplicitThis": false,
-		"esModuleInterop": true,
-		"resolveJsonModule": true
+		"removeComments": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"target": "esnext"
+	},
+	"typedocOptions": {
+		"gitRevision": "main",
+		"githubPages": false,
+		"hideGenerator": true,
+		"excludeProtected": true,
+		"excludeInternal": true,
+		"hideBreadcrumbs": true,
+		"excludePrivate": true,
+		"disableSources": true,
+		"defaultCategory": "Modules",
+		"readme": "none",
+		"plugin": ["typedoc-plugin-markdown"]
 	}
 }
