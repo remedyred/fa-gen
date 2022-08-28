@@ -27,9 +27,9 @@ specifiers:
 dependencies:
   '@fortawesome/fontawesome-common-types': 6.1.2
   '@fortawesome/fontawesome-svg-core': 6.1.2
-  '@snickbit/node-cli': 3.0.4
+  '@snickbit/node-cli': link:../node-cli
   '@snickbit/node-utilities': 4.4.2
-  '@snickbit/out': 2.0.37
+  '@snickbit/out': link:../out
   '@snickbit/utilities': 3.2.0
   '@urql/core': 2.6.1_graphql@16.5.0
   graphql: 16.5.0
@@ -41,7 +41,7 @@ optionalDependencies:
 
 devDependencies:
   '@snickbit/eslint-config': 0.0.10_4rv7y5c6xz3vfxwhbrcxxi73bq
-  '@snickbit/indexer': link:../indexer
+  '@snickbit/indexer': link:../../clis/indexer
   '@types/node': 18.6.4
   '@typescript-eslint/eslint-plugin': 5.33.0_vsoshirnpb7xw6mr7xomgfas2i
   concurrently: 7.3.0
@@ -205,17 +205,6 @@ packages:
       - supports-color
       - typescript
     dev: true
-
-  /@snickbit/node-cli/3.0.4:
-    resolution: {integrity: sha512-z9trPbhQCoqh38ptSvwx0U6yZF1RCx6RnnSwEnJs63lSaYv2yCfCXzt0fwkn6GSG0127za+7szU5M4wRLVKj+g==}
-    engines: {node: '>= 12'}
-    dependencies:
-      '@snickbit/node-utilities': 4.4.2
-      '@snickbit/out': 2.0.37
-      '@snickbit/utilities': 3.2.0
-      lilconfig: 2.0.6
-      yargs-parser: 21.0.1
-    dev: false
 
   /@snickbit/node-utilities/4.4.2:
     resolution: {integrity: sha512-FJAENTpMfbg3BlXBuuCSD6Dy7DM6ha9PEq2mc3/r/fD7UytzNxauCTMbw10mbU02e82YMxyss/s18HKvpoH3YQ==}
@@ -1567,6 +1556,7 @@ packages:
   /lilconfig/2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
+    dev: true
 
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
@@ -2329,6 +2319,7 @@ packages:
   /yargs-parser/21.0.1:
     resolution: {integrity: sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg==}
     engines: {node: '>=12'}
+    dev: true
 
   /yargs/17.5.1:
     resolution: {integrity: sha512-t6YAJcxDkNX7NFYiVtKvWUz8l+PaKTLiL63mJYWR2GnHq2gjEWISzsLp9wg3aY36dY1j+gfIEL3pIF+XlJJfbA==}
