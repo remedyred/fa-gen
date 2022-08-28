@@ -49,15 +49,15 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-common-types": "^6.1.1",
-		"@fortawesome/fontawesome-svg-core": "^6.1.1",
-		"@snickbit/node-cli": "^3.0.4",
-		"@snickbit/node-utilities": "^4.4.2",
-		"@snickbit/out": "^2.0.37",
-		"@snickbit/utilities": "^3.2.0",
-		"@urql/core": "^2.5.0",
-		"graphql": "^16.5.0",
-		"isomorphic-unfetch": "^3.1.0"
+		"@fortawesome/fontawesome-common-types": "~6.1.1",
+		"@fortawesome/fontawesome-svg-core": "~6.1.1",
+		"@snickbit/node-cli": "~3.0.4",
+		"@snickbit/node-utilities": "~4.4.2",
+		"@snickbit/out": "~2.0.37",
+		"@snickbit/utilities": "~3.2.0",
+		"@urql/core": "~2.5.0",
+		"graphql": "~16.5.0",
+		"isomorphic-unfetch": "~3.1.0"
 	},
 	"devDependencies": {
 		"@snickbit/eslint-config": "0.0.10",
@@ -73,8 +73,8 @@
 		"typescript": "4.7.4"
 	},
 	"optionalDependencies": {
-		"quasar": "^2.7.3",
-		"vue": "^3.2.37"
+		"quasar": ">= 2.7.3",
+		"vue": ">= 3.2.37"
 	},
 	"engines": {
 		"node": ">= 12"
