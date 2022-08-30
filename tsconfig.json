@@ -20,6 +20,9 @@
 		"target": "esnext"
 	},
 	"typedocOptions": {
+		"entryPoints": [
+			"src/index.ts"
+		],
 		"gitRevision": "main",
 		"githubPages": false,
 		"hideGenerator": true,
