@@ -32,7 +32,7 @@
 		"bundle:cli": "esbuild src/cli.ts --bundle --outfile=bin/fa --target=node12 --platform=node --external:@fortawesome/*",
 		"bundle:lib": "tsup",
 		"clean": "shx rm -rf ./dist ./bin ./.types",
-		"dev": "pnpm run clean && concurrently -k -c magenta,cyan,green pnpm:dev:*",
+		"dev": "pnpm run clean && pnpm run dev:cli && pnpm run dev:lib && pnpm run dev:types",
 		"dev:cli": "pnpm run bundle:cli --sourcemap",
 		"dev:lib": "pnpm run bundle:lib",
 		"dev:types": "tsc --project ./tsconfig.types.json",
