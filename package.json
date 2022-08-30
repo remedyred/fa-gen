@@ -26,54 +26,52 @@
 		"bin"
 	],
 	"scripts": {
-		"build": "pnpm run clean && pnpm run build:lib && pnpm run build:cli",
-		"build:cli": "pnpm run esbuild",
-		"build:lib": "tsup",
-		"build:meta": "pnpm run build:cli --minify --metafile=.meta.json",
-		"clean": "shx rm -rf ./dist ./bin",
-		"depcheck": "depcheck",
-		"dev:cli": "pnpm run build:cli --sourcemap",
-		"dev:lib": "pnpm run build:lib --sourcemap",
-		"esbuild": "esbuild src/cli.ts --bundle --outfile=bin/fa --target=node12 --platform=node --external:@fortawesome/*",
+		"build": "pnpm run clean && pnpm build:cli && pnpm build:lib",
+		"build:cli": "pnpm run bundle:cli",
+		"build:lib": "tsup --minify --dts",
+		"bundle:cli": "esbuild src/cli.ts --bundle --outfile=bin/fa --target=node12 --platform=node --external:@fortawesome/*",
+		"bundle:lib": "tsup",
+		"clean": "shx rm -rf ./dist ./bin ./.types",
+		"dev": "pnpm run clean && pnpm run dev:cli && pnpm run dev:lib && pnpm run dev:types",
+		"dev:cli": "pnpm run bundle:cli --sourcemap",
+		"dev:lib": "pnpm run bundle:lib",
+		"dev:types": "tsc --project ./tsconfig.types.json",
 		"index": "indexer",
-		"prod": "pnpm run clean && concurrently -n lib,cli \"pnpm run build:lib --minify\" \"pnpm run build:cli --minify\"",
-		"schema": "pnpx get-graphql-schema https://api.fontawesome.com > schema.graphql",
+		"schema": "pnpm dlx get-graphql-schema https://api.fontawesome.com > schema.graphql",
 		"start": "node bin/fa",
-		"watch": "concurrently -n lib,cli \"pnpm run watch:lib\" \"pnpm run watch:cli\"",
+		"watch": "pnpm run clean && concurrently -k -c magenta,cyan,green pnpm:watch:*",
 		"watch:cli": "pnpm run dev:cli --watch",
-		"watch:lib": "pnpm run dev:lib --watch"
+		"watch:lib": "pnpm run dev:lib --watch",
+		"watch:types": "pnpm run dev:types --watch"
 	},
 	"jest": {
+		"onlyChanged": true,
 		"preset": "ts-jest",
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-common-types": "^6.1.1",
-		"@fortawesome/fontawesome-svg-core": "^6.1.1",
-		"@snickbit/node-cli": "^3.0.4",
-		"@snickbit/node-utilities": "^4.4.2",
-		"@snickbit/out": "^2.0.37",
-		"@snickbit/utilities": "^3.2.0",
-		"@urql/core": "^2.5.0",
-		"graphql": "^16.5.0",
-		"isomorphic-unfetch": "^3.1.0"
+		"@fortawesome/fontawesome-common-types": "~6.1.1",
+		"@fortawesome/fontawesome-svg-core": "~6.1.1",
+		"@snickbit/node-cli": "~3.0.4",
+		"@snickbit/node-utilities": "~4.4.2",
+		"@snickbit/out": "~2.0.37",
+		"@snickbit/utilities": "~3.2.0",
+		"@urql/core": "~2.5.0",
+		"graphql": "~16.5.0",
+		"isomorphic-unfetch": "~3.1.0"
 	},
 	"devDependencies": {
-		"@snickbit/eslint-config": "0.0.10",
+		"@snickbit/eslint-config": "1.3.2",
 		"@snickbit/indexer": "2.5.7",
 		"@types/node": "18.6.4",
-		"@typescript-eslint/eslint-plugin": "5.33.0",
 		"concurrently": "7.3.0",
 		"eslint": "8.22.0",
-		"eslint-plugin-beautiful-sort": "2.0.3",
-		"eslint-plugin-json-files": "1.3.0",
-		"eslint-plugin-sort-class-members": "1.14.1",
 		"tsup": "6.2.2",
 		"typescript": "4.7.4"
 	},
 	"optionalDependencies": {
-		"quasar": "^2.7.3",
-		"vue": "^3.2.37"
+		"quasar": ">= 2.7.3",
+		"vue": ">= 3.2.37"
 	},
 	"engines": {
 		"node": ">= 12"
@@ -83,7 +81,6 @@
 			"src/index.ts"
 		],
 		"clean": true,
-		"dts": true,
 		"format": [
 			"esm",
 			"cjs"

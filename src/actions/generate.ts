@@ -39,11 +39,7 @@ export default async function() {
 
 		let icon = null
 
-		if (matching_icons.length === 1) {
-			icon = matching_icons.pop()
-		} else {
-			icon = await processIcon(resolved_icon)
-		}
+		icon = matching_icons.length === 1 ? matching_icons.pop() : await processIcon(resolved_icon)
 		if (icon) {
 			aliases[alias] = icon.id
 		}
