@@ -10,7 +10,7 @@ specifiers:
   '@snickbit/out': ~2.0.37
   '@snickbit/utilities': ~3.4.0
   '@types/node': 18.6.4
-  '@urql/core': ~2.5.0
+  '@urql/core': ~2.6.0
   concurrently: 7.3.0
   eslint: 8.22.0
   graphql: ~16.5.0
@@ -27,7 +27,7 @@ dependencies:
   '@snickbit/node-utilities': 4.4.9
   '@snickbit/out': 2.0.37
   '@snickbit/utilities': 3.4.2
-  '@urql/core': 2.5.0_graphql@16.5.0
+  '@urql/core': 2.6.1_graphql@16.5.0
   graphql: 16.5.0
   isomorphic-unfetch: 3.1.0
 
@@ -508,8 +508,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@urql/core/2.5.0_graphql@16.5.0:
-    resolution: {integrity: sha512-xXdcgb0H3nNTP4OfC+5T3CHJ0iz7Jj0QQYSYhN/hvKrzFnisPz2n6WXmvsHmMXk5bJHsr39kx4eOHcpsJuyCew==}
+  /@urql/core/2.6.1_graphql@16.5.0:
+    resolution: {integrity: sha512-gYrEHy3tViJhwIhauK6MIf2Qp09QTsgNHZRd0n71rS+hF6gdwjspf1oKljl4m25+272cJF7fPjBUGmjaiEr7Kg==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
