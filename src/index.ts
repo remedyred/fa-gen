@@ -13,6 +13,35 @@ export type IconSplit = [faIconPrefix, IconName]
 
 export type IconString = `${faIconPrefix}:${IconName}`
 
+export function parseIcon(iconData) {
+	let [
+		// eslint-disable-next-line prefer-const
+		width,
+		// eslint-disable-next-line prefer-const
+		height,
+		ligatures,
+		,
+		svgPathData
+	] = iconData.icon
+
+	if (ligatures.length < 2 || iconData.prefix !== 'fad') {
+		ligatures = [0, 0]
+	}
+	if (Array.isArray(svgPathData)) {
+		for (const svgIndex of svgPathData.keys()) {
+			if (!svgPathData[svgIndex].includes('@@fill: var')) {
+				if (svgIndex === 0) {
+					svgPathData[svgIndex] += '@@fill: var(--fa-secondary-color, currentColor);opacity: 0.4;opacity: var(--fa-secondary-opacity, 0.4);'
+				} else if (svgIndex === 1) {
+					svgPathData[svgIndex] += '@@fill: var(--fa-primary-color, currentColor);opacity: 1;opacity: var(--fa-primary-opacity, 1);'
+				}
+			}
+		}
+		svgPathData = svgPathData.join('&&')
+	}
+	return `${svgPathData}|${ligatures.join(' ')} ${width} ${height}`
+}
+
 export async function useFa(app, icon_aliases): Promise<void> {
 	out.verbose('Loading Font Awesome icons...')
 
@@ -23,30 +52,6 @@ export async function useFa(app, icon_aliases): Promise<void> {
 		for (const prefixIconName in prefixGroup) {
 			(iconDefaultPrefixes[prefixIconName] = iconDefaultPrefixes[prefixIconName] || []).push(prefixName)
 		}
-	}
-
-	function parseIcon(iconData) {
-		let [
-			width,
-			height,
-			ligatures, , svgPathData
-		] = iconData.icon
-		if (ligatures.length < 2 || iconData.prefix !== 'fad') {
-			ligatures = [0, 0]
-		}
-		if (Array.isArray(svgPathData)) {
-			for (const svgIndex of svgPathData.keys()) {
-				if (!svgPathData[svgIndex].includes('@@fill: var')) {
-					if (svgIndex === 0) {
-						svgPathData[svgIndex] += '@@fill: var(--fa-secondary-color, currentColor);opacity: 0.4;opacity: var(--fa-secondary-opacity, 0.4);'
-					} else if (svgIndex === 1) {
-						svgPathData[svgIndex] += '@@fill: var(--fa-primary-color, currentColor);opacity: 1;opacity: var(--fa-primary-opacity, 1);'
-					}
-				}
-			}
-			svgPathData = svgPathData.join('&&')
-		}
-		return `${svgPathData}|${ligatures.join(' ')} ${width} ${height}`
 	}
 
 	function splitIconName(icon_name: string): IconSplit {
@@ -62,20 +67,15 @@ export async function useFa(app, icon_aliases): Promise<void> {
 			prefixed_icon_name = icon_aliases[prefixed_icon_name]
 		}
 
-		let results: IconSplit
-		if (prefixed_icon_name.includes(':')) {
-			results = prefixed_icon_name.split(':') as IconSplit
-		} else {
-			results = [prefix, prefixed_icon_name] as IconSplit
-		}
-		return results
+		return prefixed_icon_name.includes(':') ? prefixed_icon_name.split(':') as IconSplit : [prefix, prefixed_icon_name] as IconSplit
 	}
 
 	function parseIconName(raw_icon_name: string): IconLookup {
+		// eslint-disable-next-line prefer-const
 		let [prefix, iconName] = splitIconName(raw_icon_name)
 
 		if (prefix === 'fa' && iconName in iconDefaultPrefixes && iconDefaultPrefixes[iconName].length === 1) {
-			prefix = iconDefaultPrefixes[iconName].slice().pop()
+			prefix = [...iconDefaultPrefixes[iconName]].pop()
 		}
 
 		prefix = prefix as IconPrefix

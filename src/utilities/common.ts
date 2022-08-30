@@ -38,13 +38,16 @@ export async function initConfig() {
 
 			_config.version = await ask('Which FontAwesome version?', {
 				type: 'select',
-				choices: [{
-					title: 'FontAwesome Pro 5',
-					value: 'svg-fontawesome-v5-pro'
-				}, {
-					title: 'FontAwesome Pro 6',
-					value: 'svg-fontawesome-v6-pro'
-				}]
+				choices: [
+					{
+						title: 'FontAwesome Pro 5',
+						value: 'svg-fontawesome-v5-pro'
+					},
+					{
+						title: 'FontAwesome Pro 6',
+						value: 'svg-fontawesome-v6-pro'
+					}
+				]
 			})
 
 			if (!_config.version) {
@@ -81,7 +84,7 @@ export async function initConfig() {
 				_config.typescript = true
 			}
 
-			_config.icons = default_icons.slice()
+			_config.icons = [...default_icons]
 			_config.aliases = {...default_icon_aliases}
 			if (fileExists('quasar.conf.js') || fileExists('quasar.config.js')) {
 				$out.info('Quasar Framework detected!')
@@ -92,8 +95,9 @@ export async function initConfig() {
 		} else {
 			try {
 				_config = getFileJson(config_path)
-			} catch (e) {
-				$out.error(`Error parsing config file: ${e.message}`)
+			} catch (error) {
+				$out.error(`Error parsing config file: ${error.message}`)
+				// eslint-disable-next-line unicorn/no-process-exit
 				process.exit(1)
 			}
 		}
@@ -127,11 +131,11 @@ export function iconExists(icon: string) {
 }
 
 export function cleanIconName(icon_name: string): string {
-	return icon_name.replace(/(fa[a-z]?)[-:]/, '')
+	return icon_name.replace(/(fa[a-z]?)[:-]/, '')
 }
 
 export function normalizeIconName(icon_name: string): string {
-	icon_name = icon_name.replace(/(fa[a-z]?)[-:]/, `$1:`)
+	icon_name = icon_name.replace(/(fa[a-z]?)[:-]/, `$1:`)
 	if (!icon_name.includes(':')) {
 		icon_name = `fa:${icon_name}`
 	}
@@ -142,6 +146,7 @@ export function parseIcon(raw_icon_name) {
 	const config = useConfig()
 
 	const normalizedIconName = normalizeIconName(raw_icon_name)
+	// eslint-disable-next-line prefer-const
 	let [prefix, name] = normalizedIconName.split(':')
 
 	if (prefix === 'fa' && config.default) {
@@ -172,13 +177,10 @@ export function getImportString(icon) {
 }
 
 export function getStringContent(content, config) {
-	let contentString
-
 	const iconAliases = {...default_icon_aliases, ...config.aliases}
 	const aliases_string = `const icon_aliases = ${JSON.stringify(iconAliases, null, 2)}`
 
-	if (config.isQuasar) {
-		contentString = `
+	const contentString = config.isQuasar ? `
 // required
 import {boot} from 'quasar/wrappers'
 import {useFa} from '@snickbit/fa-gen'
@@ -193,14 +195,11 @@ ${aliases_string}
 export default boot(async ({app}) => {
 	await useFa(app, icon_aliases)
 })
-`
-	} else {
-		contentString = `
+` : `
 import {library} from "@fortawesome/fontawesome-svg-core"
 
 ${content.join('\n')}
 ${aliases_string}
 `
-	}
 	return contentString
 }

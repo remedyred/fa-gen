@@ -28,9 +28,10 @@ export default {
 
 			for (const subject of args.subjects) {
 				const icon = parseIcon(subject)
-				const iconPredicate = i => i === icon.id || i === icon.name || i === `fa:${icon.name}`
+				// eslint-disable-next-line unicorn/consistent-function-scoping
+				const iconPredicate = item => item === icon.id || item === icon.name || item === `fa:${icon.name}`
 				if (!args.alias) {
-					const icons = config.icons.filter(iconPredicate)
+					const icons = config.icons.filter(item => iconPredicate(item))
 					if (!isEmpty(icons)) {
 						config.icons = config.icons.filter(i => !icons.includes(i))
 						$out.v().success(`Removed ${plural('icon', icons.length)} {cyan}${icons.join(', ')}{/cyan}`)

@@ -35,9 +35,10 @@ export default async argv => cli(argv)
 			let iconName = cleanIconName(icon)
 			if (!iconExists(iconName)) {
 				const iconQuery = gql`
-				query ($version: String!, $query: String!) {
-					search(version: $version, query: $query, first: 15) {id, styles, label}
-				}`
+					query ($version: String!, $query: String!) {
+						search(version: $version, query: $query, first: 15) {id, styles, label}
+					}
+				`
 
 				let results
 				try {
@@ -45,7 +46,7 @@ export default async argv => cli(argv)
 						version: queryVersion,
 						query: iconName
 					}).toPromise()
-				} catch (e) {
+				} catch {
 					$out.error(`We couldn't find any icons matching {cyan}${iconName}{/cyan}`)
 					continue
 				}
