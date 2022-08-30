@@ -8,7 +8,7 @@ specifiers:
   '@snickbit/node-cli': ~3.0.4
   '@snickbit/node-utilities': ~4.4.2
   '@snickbit/out': ~2.0.37
-  '@snickbit/utilities': ~3.2.0
+  '@snickbit/utilities': ~3.4.0
   '@types/node': 18.6.4
   '@urql/core': ~2.5.0
   concurrently: 7.3.0
@@ -26,7 +26,7 @@ dependencies:
   '@snickbit/node-cli': 3.0.4
   '@snickbit/node-utilities': 4.4.9
   '@snickbit/out': 2.0.37
-  '@snickbit/utilities': 3.2.2
+  '@snickbit/utilities': 3.4.2
   '@urql/core': 2.5.0_graphql@16.5.0
   graphql: 16.5.0
   isomorphic-unfetch: 3.1.0
@@ -270,27 +270,15 @@ packages:
     dependencies:
       '@snickbit/ansi': 0.0.10
       '@snickbit/cycle': 0.0.29
-      '@snickbit/utilities': 3.2.2
+      '@snickbit/utilities': 3.4.2
       ansi-styles-template: 1.0.0
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
 
-  /@snickbit/plural/0.0.4:
-    resolution: {integrity: sha512-l+8snpVb8ebef5vmY06B6Q8V0X7F4wtjZOskVSKOh6fNyO8o6tS6N0N8UHdJXsE7AYM4p0Vd4qIk2KrSSDynRw==}
-    engines: {node: '>= 12'}
-
   /@snickbit/plural/0.0.6:
     resolution: {integrity: sha512-Bmxmhi984QgV+Yo5T4uMuKGmfgkkv7BpFkfo0p1di/4ZZt379vDTOLCPf3+HZec12pabMFUCHcq8vyxjUCxcDA==}
     engines: {node: '>= 12'}
-
-  /@snickbit/utilities/3.2.2:
-    resolution: {integrity: sha512-p9tULe2gjCBoYIQWV53ev71udIjkLlFoNWNZkrXZpsmO3lYIml+KyTaWeTfNCbqjeRf37BjPT/gUX4KhdAJkjQ==}
-    engines: {node: '>= 12'}
-    dependencies:
-      '@snickbit/plural': 0.0.4
-      just-camel-case: 6.1.1
-      nanoid: 3.3.4
 
   /@snickbit/utilities/3.4.2:
     resolution: {integrity: sha512-juE9uuScBQc11By89w7pf/VvRPQuU012ucMTPBeTTs18RzDXz2gEBAQIAnkoN1SNRN+LQUIp0hLGz9hxZB1ElQ==}
