@@ -10,7 +10,7 @@ specifiers:
   '@snickbit/out': ~2.0.37
   '@snickbit/utilities': ~3.4.0
   '@types/node': 18.6.4
-  '@urql/core': ~2.6.0
+  '@urql/core': ~3.0.0
   concurrently: 7.3.0
   eslint: 8.23.0
   graphql: ~16.6.0
@@ -27,7 +27,7 @@ dependencies:
   '@snickbit/node-utilities': 4.4.9
   '@snickbit/out': 2.0.37
   '@snickbit/utilities': 3.4.2
-  '@urql/core': 2.6.1_graphql@16.6.0
+  '@urql/core': 3.0.2_graphql@16.6.0
   graphql: 16.6.0
   isomorphic-unfetch: 3.1.0
 
@@ -513,14 +513,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@urql/core/2.6.1_graphql@16.6.0:
-    resolution: {integrity: sha512-gYrEHy3tViJhwIhauK6MIf2Qp09QTsgNHZRd0n71rS+hF6gdwjspf1oKljl4m25+272cJF7fPjBUGmjaiEr7Kg==}
+  /@urql/core/3.0.2_graphql@16.6.0:
+    resolution: {integrity: sha512-TRpQOdt1Mtpt/EgPlFCx9Aqc3TbHtzH3yj8pJ9yjSUKT4slRyy+ofMQ8yx50oZzZjAOswF02zBRwnxsZANb35A==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
       graphql: 16.6.0
-      wonka: 4.0.15
+      wonka: 6.0.0
     dev: false
 
   /@vue/compiler-core/3.2.37:
@@ -2654,8 +2654,8 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /wonka/4.0.15:
-    resolution: {integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==}
+  /wonka/6.0.0:
+    resolution: {integrity: sha512-TEiIOqkhQXbcmL1RrjxPCzTX15V5FSyJvZRSiTxvgTgrJMaOVKmzGTdRVh349CfaNo9dsIhWDyg1/GNq4NWrEg==}
     dev: false
 
   /word-wrap/1.2.3:
