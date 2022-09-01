@@ -45,7 +45,6 @@
 		"watch:types": "pnpm run dev:types --watch"
 	},
 	"jest": {
-		"onlyChanged": true,
 		"preset": "ts-jest",
 		"testEnvironment": "node"
 	},
