@@ -45,18 +45,17 @@
 		"watch:types": "pnpm run dev:types --watch"
 	},
 	"jest": {
-		"onlyChanged": true,
 		"preset": "ts-jest",
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-common-types": "~6.1.1",
-		"@fortawesome/fontawesome-svg-core": "~6.1.1",
+		"@fortawesome/fontawesome-common-types": "~6.1.2",
+		"@fortawesome/fontawesome-svg-core": "~6.1.2",
 		"@snickbit/node-cli": "~3.0.4",
-		"@snickbit/node-utilities": "~4.4.2",
+		"@snickbit/node-utilities": "~4.4.10",
 		"@snickbit/out": "~2.0.37",
-		"@snickbit/utilities": "~3.4.0",
-		"@urql/core": "~3.0.0",
+		"@snickbit/utilities": "~3.4.3",
+		"@urql/core": "~3.0.1",
 		"graphql": "~16.6.0",
 		"isomorphic-unfetch": "~3.1.0"
 	},
@@ -65,13 +64,14 @@
 		"@snickbit/indexer": "2.5.7",
 		"@types/node": "18.6.4",
 		"concurrently": "7.3.0",
-		"eslint": "8.23.0",
+		"esbuild": "0.15.6",
+		"eslint": "8.22.0",
 		"tsup": "6.2.3",
 		"typescript": "4.8.2"
 	},
 	"optionalDependencies": {
-		"quasar": ">= 2.7.3",
-		"vue": ">= 3.2.37"
+		"quasar": "^2.7.7",
+		"vue": "^3.2.38"
 	},
 	"engines": {
 		"node": ">= 12"
