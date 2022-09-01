@@ -53,8 +53,8 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-common-types": "~6.1.2",
-		"@fortawesome/fontawesome-svg-core": "~6.1.2",
+		"@fortawesome/fontawesome-common-types": "~6.2.0",
+		"@fortawesome/fontawesome-svg-core": "~6.2.0",
 		"@snickbit/node-cli": "~3.0.4",
 		"@snickbit/node-utilities": "~4.4.10",
 		"@snickbit/out": "~2.0.37",
