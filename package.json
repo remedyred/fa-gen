@@ -62,10 +62,12 @@
 	"devDependencies": {
 		"@snickbit/eslint-config": "1.3.2",
 		"@snickbit/indexer": "2.5.7",
+		"@snickbit/semantic-release": "^1.5.3",
 		"@types/node": "18.6.4",
 		"concurrently": "7.3.0",
 		"esbuild": "0.15.6",
 		"eslint": "8.23.0",
+		"semantic-release": "^19.0.5",
 		"shx": "0.3.4",
 		"tsup": "6.2.3",
 		"typescript": "4.8.2"
