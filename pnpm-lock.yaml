@@ -4,7 +4,7 @@ specifiers:
   '@fortawesome/fontawesome-common-types': ~6.1.2
   '@fortawesome/fontawesome-svg-core': ~6.1.2
   '@snickbit/eslint-config': 1.3.2
-  '@snickbit/indexer': 2.5.15
+  '@snickbit/indexer': 2.5.16
   '@snickbit/node-cli': ~3.0.4
   '@snickbit/node-utilities': ~4.4.10
   '@snickbit/out': ~2.0.37
@@ -41,7 +41,7 @@ optionalDependencies:
 
 devDependencies:
   '@snickbit/eslint-config': 1.3.2_yqf6kl63nyoq5megxukfnom5rm
-  '@snickbit/indexer': 2.5.15
+  '@snickbit/indexer': 2.5.16
   '@snickbit/semantic-release': 1.5.3_semantic-release@19.0.5
   '@types/node': 18.6.4
   concurrently: 7.3.0
@@ -484,8 +484,8 @@ packages:
       - typescript
     dev: true
 
-  /@snickbit/indexer/2.5.15:
-    resolution: {integrity: sha512-6xjoj/FdQZPpHb3uecFQrSzdUSVAuT1+fyTP6c8+02RxtWV9SttN1BUDHdw8WxEXwdwdtVai2M1xVAHjydoNNQ==}
+  /@snickbit/indexer/2.5.16:
+    resolution: {integrity: sha512-0whoqzPiplRc0DHJZ4czBh8v1qLJ33MTSrzWBx4ahSoujT97Q4zLoz9AnsAShH4IOmngXQl79abourqoJREfBg==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
