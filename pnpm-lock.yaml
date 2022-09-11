@@ -12,7 +12,7 @@ specifiers:
   '@snickbit/utilities': ~3.4.3
   '@types/node': 18.6.4
   '@urql/core': ~3.0.1
-  concurrently: 7.3.0
+  concurrently: 7.4.0
   esbuild: 0.15.7
   eslint: 8.23.0
   graphql: ~16.6.0
@@ -44,7 +44,7 @@ devDependencies:
   '@snickbit/indexer': 2.5.17
   '@snickbit/semantic-release': 1.5.3_semantic-release@19.0.5
   '@types/node': 18.6.4
-  concurrently: 7.3.0
+  concurrently: 7.4.0
   esbuild: 0.15.7
   eslint: 8.23.0
   semantic-release: 19.0.5
@@ -445,8 +445,8 @@ packages:
     resolution: {integrity: sha512-6luJMgt9Pz66oEeJeq0op5MrE//n/toS3zpJ1S6kZzxpXfkFjaRnnOBhqisQyvMd3K8vjHzITvHy2D0BRwOzBw==}
     engines: {node: '>= 12'}
 
-  /@snickbit/ansi/0.0.15:
-    resolution: {integrity: sha512-FAgwQ+RX7V7m17W5w5hBIhGjyMmDtQmSGuOkdTnglRv6HY1/rOAjhLUyoD07MZ2QutIDsykhrIrDmU+UgyxOwg==}
+  /@snickbit/ansi/0.0.17:
+    resolution: {integrity: sha512-UbtbjcQmKB31SvpgucV6vnr4Azf2xkeZ9aHn9psgwLauqnFtXdqEkcGWDvLsZoe5mHbAiCuFtob6A1LWqdWbnw==}
     engines: {node: '>= 12'}
     dev: false
 
@@ -555,7 +555,7 @@ packages:
     resolution: {integrity: sha512-fTVcE5QKVSNKMddUVqwXGsc5jx87L8sKm6ufA1z/02ygibz/pCGqmDI5lQZsv7qIFwm+9h0r3ydk59RCf7gw8Q==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/ansi': 0.0.15
+      '@snickbit/ansi': 0.0.17
       '@snickbit/cycle': 0.0.29
       '@snickbit/utilities': 3.4.4
       ansi-styles-template: 1.0.0
@@ -1237,8 +1237,8 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
-  /concurrently/7.3.0:
-    resolution: {integrity: sha512-IiDwm+8DOcFEInca494A8V402tNTQlJaYq78RF2rijOrKEk/AOHTxhN4U1cp7GYKYX5Q6Ymh1dLTBlzIMN0ikA==}
+  /concurrently/7.4.0:
+    resolution: {integrity: sha512-M6AfrueDt/GEna/Vg9BqQ+93yuvzkSKmoTixnwEJkH0LlcGrRC2eCmjeG1tLLHIYfpYJABokqSGyMcXjm96AFA==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
