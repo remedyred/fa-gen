@@ -41,8 +41,7 @@
 		"start": "node bin/fa",
 		"watch": "pnpm run clean && concurrently -k -c magenta,cyan,green pnpm:watch:*",
 		"watch:cli": "pnpm run dev:cli --watch",
-		"watch:lib": "pnpm run dev:lib --watch",
-		"watch:types": "pnpm run dev:types --watch"
+		"watch:lib": "pnpm run dev:lib --watch"
 	},
 	"release": {
 		"extends": [
@@ -89,6 +88,7 @@
 			"src/index.ts"
 		],
 		"clean": true,
+		"onSuccess": "pnpm run dev:types",
 		"format": [
 			"esm",
 			"cjs"

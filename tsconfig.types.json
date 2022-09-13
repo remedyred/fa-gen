@@ -4,6 +4,6 @@
 		"src/**/*.ts"
 	],
 	"compilerOptions": {
-		"declarationDir": ".types"
+		"outDir": "dist"
 	}
 }
