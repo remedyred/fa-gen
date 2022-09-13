@@ -31,7 +31,7 @@
 		"build:lib": "tsup --minify --dts",
 		"bundle:cli": "esbuild src/cli.ts --bundle --outfile=bin/fa --target=node12 --platform=node --external:@fortawesome/*",
 		"bundle:lib": "tsup",
-		"clean": "shx rm -rf ./dist ./bin ./.types",
+		"clean": "shx rm -rf ./dist ./bin",
 		"dev": "pnpm run clean && pnpm run dev:cli && pnpm run dev:lib && pnpm run dev:types",
 		"dev:cli": "pnpm run bundle:cli --sourcemap",
 		"dev:lib": "pnpm run bundle:lib",
