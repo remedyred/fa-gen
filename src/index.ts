@@ -1,6 +1,7 @@
 import {IconDefinition, IconName, IconPrefix} from '@fortawesome/fontawesome-common-types'
 import {icon, IconLookup, library} from '@fortawesome/fontawesome-svg-core'
 import {default_icon_map} from './utilities/data'
+import {isString} from '@snickbit/utilities'
 import out from '@snickbit/out'
 
 export type faIconPrefix = IconPrefix | 'fa'
@@ -14,24 +15,36 @@ export type IconSplit = [faIconPrefix, IconName]
 export type IconString = `${faIconPrefix}:${IconName}`
 
 export function parseIcon(iconData) {
-	let [ligatures,	, svgPathData] = iconData.icon
-	const [width, height] = iconData.icon
+	let [
+		// eslint-disable-next-line prefer-const
+		width,
+		// eslint-disable-next-line prefer-const
+		height,
+		ligatures,
+		,
+		svgPathData
+	] = iconData.icon
 
 	if (ligatures.length < 2 || iconData.prefix !== 'fad') {
 		ligatures = [0, 0]
 	}
 	if (Array.isArray(svgPathData)) {
 		for (const svgIndex of svgPathData.keys()) {
-			if (!svgPathData[svgIndex].includes('@@fill: var')) {
+			let svgPath = svgPathData[svgIndex]
+
+			if (isString(svgPath) && !svgPath.includes('@@fill: var')) {
 				if (svgIndex === 0) {
-					svgPathData[svgIndex] += '@@fill: var(--fa-secondary-color, currentColor);opacity: 0.4;opacity: var(--fa-secondary-opacity, 0.4);'
+					svgPath += '@@fill: var(--fa-secondary-color, currentColor);opacity: 0.4;opacity: var(--fa-secondary-opacity, 0.4);'
 				} else if (svgIndex === 1) {
-					svgPathData[svgIndex] += '@@fill: var(--fa-primary-color, currentColor);opacity: 1;opacity: var(--fa-primary-opacity, 1);'
+					svgPath += '@@fill: var(--fa-primary-color, currentColor);opacity: 1;opacity: var(--fa-primary-opacity, 1);'
 				}
 			}
+
+			svgPathData[svgIndex] = svgPath
 		}
 		svgPathData = svgPathData.join('&&')
 	}
+
 	return `${svgPathData}|${ligatures.join(' ')} ${width} ${height}`
 }
 
