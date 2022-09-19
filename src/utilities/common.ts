@@ -178,7 +178,7 @@ export function getImportString(icon) {
 
 export function getStringContent(content, config) {
 	const iconAliases = {...default_icon_aliases, ...config.aliases}
-	const aliases_string = `const icon_aliases = ${JSON.stringify(iconAliases, null, 2)}`
+	const aliases_string = `export const icon_aliases = ${JSON.stringify(iconAliases, null, 2)}`
 
 	const contentString = config.isQuasar ? `
 // required
