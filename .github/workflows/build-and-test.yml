@@ -10,9 +10,5 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - name: Use .npmrc
-        uses: bduff9/use-npmrc@v1.1
-        with:
-          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - name: Build, Test, and Lint
         uses: remedyred/build-and-test-action@v1.0.8

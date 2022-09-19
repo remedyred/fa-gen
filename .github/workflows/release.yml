@@ -16,10 +16,6 @@ jobs:
       issues: write
       contents: write
     steps:
-      - name: Use .npmrc
-        uses: bduff9/use-npmrc@v1.1
-        with:
-          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - name: Release
         uses: remedyred/semantic-release-action@v1.0.5
         with:
