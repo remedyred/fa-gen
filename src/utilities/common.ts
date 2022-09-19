@@ -180,7 +180,7 @@ export function getStringContent(content, config) {
 	const iconAliases = {...default_icon_aliases, ...config.aliases}
 	const aliases_string = `export const icon_aliases = ${JSON.stringify(iconAliases, null, 2)}`
 
-	const contentString = config.isQuasar ? `
+	return config.isQuasar ? `
 // required
 import {boot} from 'quasar/wrappers'
 import {useFa} from '@snickbit/fa-gen'
@@ -201,5 +201,4 @@ import {library} from "@fortawesome/fontawesome-svg-core"
 ${content.join('\n')}
 ${aliases_string}
 `
-	return contentString
 }
