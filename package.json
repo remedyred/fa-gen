@@ -28,17 +28,18 @@
 	"scripts": {
 		"build": "pnpm run clean && pnpm build:cli && pnpm build:lib",
 		"build:cli": "pnpm run bundle:cli",
-		"build:lib": "tsup --minify --dts",
+		"build:lib": "tsup --minify",
 		"bundle:cli": "esbuild src/cli.ts --bundle --outfile=bin/fa --target=node12 --platform=node --external:@fortawesome/*",
 		"bundle:lib": "tsup",
 		"clean": "shx rm -rf ./dist ./bin",
 		"dev": "pnpm run clean && pnpm run dev:cli && pnpm run dev:lib && pnpm run dev:types",
 		"dev:cli": "pnpm run bundle:cli --sourcemap",
 		"dev:lib": "pnpm run bundle:lib",
-		"dev:types": "tsc --project ./tsconfig.types.json",
+		"fix": "eslint . --fix",
 		"index": "indexer",
 		"schema": "pnpm dlx get-graphql-schema https://api.fontawesome.com > schema.graphql",
 		"start": "node bin/fa",
+		"types": "tsc --project ./tsconfig.types.json",
 		"watch": "pnpm run clean && concurrently -k -c magenta,cyan,green pnpm:watch:*",
 		"watch:cli": "pnpm run dev:cli --watch",
 		"watch:lib": "pnpm run dev:lib --watch"
@@ -53,8 +54,8 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-common-types": "~6.1.2",
-		"@fortawesome/fontawesome-svg-core": "~6.1.2",
+		"@fortawesome/fontawesome-common-types": "~6.2.0",
+		"@fortawesome/fontawesome-svg-core": "~6.2.0",
 		"@snickbit/node-cli": "~3.0.4",
 		"@snickbit/node-utilities": "~4.4.10",
 		"@snickbit/out": "~2.0.37",
@@ -88,7 +89,7 @@
 			"src/index.ts"
 		],
 		"clean": true,
-		"onSuccess": "pnpm run dev:types",
+		"onSuccess": "pnpm run types",
 		"format": [
 			"esm",
 			"cjs"

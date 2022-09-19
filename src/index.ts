@@ -14,15 +14,8 @@ export type IconSplit = [faIconPrefix, IconName]
 export type IconString = `${faIconPrefix}:${IconName}`
 
 export function parseIcon(iconData) {
-	let [
-		// eslint-disable-next-line prefer-const
-		width,
-		// eslint-disable-next-line prefer-const
-		height,
-		ligatures,
-		,
-		svgPathData
-	] = iconData.icon
+	let [ligatures,	, svgPathData] = iconData.icon
+	const [width, height] = iconData.icon
 
 	if (ligatures.length < 2 || iconData.prefix !== 'fad') {
 		ligatures = [0, 0]

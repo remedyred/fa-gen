@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 
 import {cli} from '@snickbit/node-cli'
-import {out} from '@snickbit/out'
+import {name, version} from '../package.json'
 import * as actions from './actions'
-import packageJson from '../package.json'
 
 cli()
-	.name(packageJson.name)
-	.version(packageJson.version)
+	.name(name)
+	.version(version)
 	.actions(actions)
 	.run()
-	.then(() => out.done('Done!'))
-	.catch(error => out.fatal(error))
