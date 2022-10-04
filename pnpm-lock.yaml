@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@fortawesome/fontawesome-common-types': ~6.2.0
   '@fortawesome/fontawesome-svg-core': ~6.2.0
-  '@snickbit/eslint-config': 1.3.6
+  '@snickbit/eslint-config': 1.3.7
   '@snickbit/indexer': 2.5.25
   '@snickbit/node-cli': ~3.0.4
   '@snickbit/node-utilities': ~4.4.10
@@ -40,7 +40,7 @@ optionalDependencies:
   vue: 3.2.38
 
 devDependencies:
-  '@snickbit/eslint-config': 1.3.6_7ilbxdl5iguzcjriqqcg2m5cku
+  '@snickbit/eslint-config': 1.3.7_7ilbxdl5iguzcjriqqcg2m5cku
   '@snickbit/indexer': 2.5.25
   '@snickbit/semantic-release': 1.5.4_semantic-release@19.0.5
   '@types/node': 18.6.4
@@ -446,8 +446,8 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /@snickbit/ansi/0.0.21:
-    resolution: {integrity: sha512-+cyuDdz45wdbsl0xO6pDcgv1VSalQ4343412NxHgNGGaXs7HwsPMuO6OYRTzf+lYm+jBPjkCkgOErhycP/2+KQ==}
+  /@snickbit/ansi/0.0.22:
+    resolution: {integrity: sha512-PfgF8N2w2EMVimkTA1xVmOdOqmkZ44RkkWyK3SUB0wqp7jz9df4lYZq5KJiCnDDnqfxdNPD/rUFMPkP2j2dwkg==}
     engines: {node: '>= 12'}
 
   /@snickbit/cycle/0.0.29:
@@ -463,8 +463,8 @@ packages:
       '@snickbit/utilities': 3.4.3
     dev: true
 
-  /@snickbit/eslint-config/1.3.6_7ilbxdl5iguzcjriqqcg2m5cku:
-    resolution: {integrity: sha512-zs8jlgHMq2hNH58A3u2e45qsDSoMQjS/qvg7ayuW/uHhHHEX5uldzqUUAjpTHXvKM2/lHw+edrmDSqQDbDuRVA==}
+  /@snickbit/eslint-config/1.3.7_7ilbxdl5iguzcjriqqcg2m5cku:
+    resolution: {integrity: sha512-zxfOv/CyvF+/LyD3GOHldwnsukdrqHWRhNoTvnM1YjRiO0nuoE/qa0dA6z+VbMvvEsRUfCUyMejhLR8cNLdqDA==}
     engines: {node: '>= 12'}
     peerDependencies:
       eslint: '>= 8.19.0'
@@ -556,7 +556,7 @@ packages:
     resolution: {integrity: sha512-fTVcE5QKVSNKMddUVqwXGsc5jx87L8sKm6ufA1z/02ygibz/pCGqmDI5lQZsv7qIFwm+9h0r3ydk59RCf7gw8Q==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/ansi': 0.0.21
+      '@snickbit/ansi': 0.0.22
       '@snickbit/cycle': 0.0.29
       '@snickbit/utilities': 3.4.3
       ansi-styles-template: 1.0.0
