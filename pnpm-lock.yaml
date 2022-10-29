@@ -4,7 +4,7 @@ specifiers:
   '@fortawesome/fontawesome-common-types': ~6.2.0
   '@fortawesome/fontawesome-svg-core': ~6.2.0
   '@snickbit/eslint-config': 1.3.9
-  '@snickbit/indexer': 2.5.25
+  '@snickbit/indexer': 2.5.28
   '@snickbit/node-cli': ~3.0.4
   '@snickbit/node-utilities': ~4.4.10
   '@snickbit/out': ~2.0.37
@@ -41,7 +41,7 @@ optionalDependencies:
 
 devDependencies:
   '@snickbit/eslint-config': 1.3.9_ypn2ylkkyfa5i233caldtndbqa
-  '@snickbit/indexer': 2.5.25
+  '@snickbit/indexer': 2.5.28
   '@snickbit/semantic-release': 1.6.1_semantic-release@19.0.5
   '@types/node': 18.6.4
   concurrently: 7.4.0
@@ -450,11 +450,6 @@ packages:
       - supports-color
     dev: true
 
-  /@snickbit/ansi/0.0.20:
-    resolution: {integrity: sha512-jH1GEZe8vXph25lM5nzYJmrXhCCC6PwefWemIEIAtv0UNuCwktk6neJG0+Idcj6fBOcca8GtnBhWw1HIzRJGNA==}
-    engines: {node: '>= 12'}
-    dev: true
-
   /@snickbit/ansi/0.0.23:
     resolution: {integrity: sha512-wfjHMntGWFubOfQtT7I/yxUsqoNh5ctw4yVLtzGIzpMFnqLvu4T2eDocW8CzwxRMJunFGDSS7E5OHc0Rc9iCoQ==}
     engines: {node: '>= 12'}
@@ -463,13 +458,14 @@ packages:
     resolution: {integrity: sha512-hP/kU0+g9hRuvv1dtPEpq6qdtd0rxdLFLj/GZ6f8PqxqFTdxj4OeWtFn64Xlr1scsAQz9PYFCmf4hZ6tO+fGrw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/utilities': 3.4.3
+      '@snickbit/utilities': 3.4.15
+    dev: false
 
   /@snickbit/cycle/1.0.6:
     resolution: {integrity: sha512-mLEXPT0VITJiO9BOKTSkyMafE0UwByjNZ+JE6y9oLSgLG7abvt2R3y5VUKF2gfn8foPYp6pymvQPktHMlvCdfA==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/utilities': 3.4.3
+      '@snickbit/utilities': 3.4.15
     dev: true
 
   /@snickbit/eslint-config/1.3.9_ypn2ylkkyfa5i233caldtndbqa:
@@ -498,16 +494,16 @@ packages:
       - typescript
     dev: true
 
-  /@snickbit/indexer/2.5.25:
-    resolution: {integrity: sha512-SeEv1mdN0wALG6BbAdLlCl+r67WCg0EsOvQeAVfRbA6vqrk/dK9QYjwPDiaidVQLLqAdCsqAoJBajceBNQb92w==}
+  /@snickbit/indexer/2.5.28:
+    resolution: {integrity: sha512-NFFT+D+HLnTAobLEhlc6HYrP2w9Mx3tLwxEpgJ8zx6FSofPZe7hQDcM/IJTR/glB6Iwgl3kHqZxm6hzIudDLdA==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
       '@snickbit/node-cli': 2.0.2
-      '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.44
-      '@snickbit/utilities': 3.4.2
-      fast-glob: 3.2.11
+      '@snickbit/node-utilities': 4.4.16
+      '@snickbit/out': 2.0.48
+      '@snickbit/utilities': 3.4.15
+      fast-glob: 3.2.12
       lilconfig: 2.0.6
       picomatch: 2.3.1
     dev: true
@@ -516,9 +512,9 @@ packages:
     resolution: {integrity: sha512-AAvtvzmL+b9lqT0gIzjWR98MVE5TEVDTv1eFFqAvEB9g+A+3aBE1wgdxLPqndaQpDg20SpbMl/xlzG4o3er0zQ==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/node-utilities': 4.4.10
-      '@snickbit/out': 2.0.44
-      '@snickbit/utilities': 3.4.3
+      '@snickbit/node-utilities': 4.4.16
+      '@snickbit/out': 2.0.48
+      '@snickbit/utilities': 3.4.15
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
     dev: true
@@ -546,13 +542,14 @@ packages:
       lodash.throttle: 4.1.1
       nanospinner: 1.1.0
       prompts: 2.4.2
+    dev: false
 
-  /@snickbit/node-utilities/4.4.9:
-    resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
+  /@snickbit/node-utilities/4.4.16:
+    resolution: {integrity: sha512-jfD/sbydtkLY3TZRFjUyI5wYMe7loHK5LMwIblO2BnyURA15XESr637hqh2n2pL8t73dzMfwsI0elwh1R4/2JQ==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/out': 2.0.44
-      '@snickbit/utilities': 3.4.3
+      '@snickbit/out': 2.0.48
+      '@snickbit/utilities': 3.4.15
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
       is-wsl: 2.2.0
@@ -572,27 +569,28 @@ packages:
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
+    dev: false
 
-  /@snickbit/out/2.0.44:
-    resolution: {integrity: sha512-MC36yhVTXqMSMfneG2g6X0yx7IhhJYu/19zU0nhkXd01EfPPqbYo4QOZLkLtnffnXQ6OiCgNGDHmLh+ruyzA/g==}
+  /@snickbit/out/2.0.48:
+    resolution: {integrity: sha512-c7K4hX050CFZ255J8AK6JUQAJIC2GI7S4Ph2ci5eHcL14k+K1PdQQS4jLbO/E7QKOA+0Wa4Rg05o9JdZh+W0xw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/ansi': 0.0.20
+      '@snickbit/ansi': 0.0.23
       '@snickbit/cycle': 1.0.6
-      '@snickbit/utilities': 3.4.3
+      '@snickbit/utilities': 3.4.15
       ansi-styles-template: 1.0.0
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
     dev: true
 
-  /@snickbit/plural/0.0.6:
-    resolution: {integrity: sha512-Bmxmhi984QgV+Yo5T4uMuKGmfgkkv7BpFkfo0p1di/4ZZt379vDTOLCPf3+HZec12pabMFUCHcq8vyxjUCxcDA==}
-    engines: {node: '>= 12'}
-    dev: true
-
   /@snickbit/plural/1.0.2:
     resolution: {integrity: sha512-Qy77SU9BE/AcHldppsspEFoLxxa9glB+bd5MNs4rpeBG8YCBbc+jRuZ0fWCn/u44ix5jlqi/rY5hugw7XG1BMQ==}
+    engines: {node: '>= 12'}
+    dev: false
+
+  /@snickbit/plural/1.0.9:
+    resolution: {integrity: sha512-FFbmZ82K36lI5YBXAQK4mJtEfvQhrckZSHT4+RDzdDHPhHKl5M9dJKA5mLdSvALSiaTIUYoM3vOMJPG0stGwhA==}
     engines: {node: '>= 12'}
 
   /@snickbit/semantic-release/1.6.1_semantic-release@19.0.5:
@@ -612,14 +610,13 @@ packages:
       - supports-color
     dev: true
 
-  /@snickbit/utilities/3.4.2:
-    resolution: {integrity: sha512-juE9uuScBQc11By89w7pf/VvRPQuU012ucMTPBeTTs18RzDXz2gEBAQIAnkoN1SNRN+LQUIp0hLGz9hxZB1ElQ==}
+  /@snickbit/utilities/3.4.15:
+    resolution: {integrity: sha512-NpFVad6zDiDGTYjacICOB1yxgrVOG0Z3EU3b1DKn1yxW7P4SLjcXX4WdMkrC+XbdmXW5Brinl/cO1k1+pCV3pQ==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/plural': 0.0.6
+      '@snickbit/plural': 1.0.9
       just-camel-case: 6.1.1
       nanoid: 3.3.4
-    dev: true
 
   /@snickbit/utilities/3.4.3:
     resolution: {integrity: sha512-G9JGD1RUOkJnDDnmMFAN175BlQ6euKN+AGFnRgvSIsyaWct+Pl2MhG0VrUp5FcYSUJ2VzrJXsYdIpbXiWg1H/g==}
@@ -628,6 +625,7 @@ packages:
       '@snickbit/plural': 1.0.2
       just-camel-case: 6.1.1
       nanoid: 3.3.4
+    dev: false
 
   /@tootallnate/once/2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -1967,8 +1965,8 @@ packages:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
     dev: true
 
-  /fast-glob/3.2.11:
-    resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
+  /fast-glob/3.2.12:
+    resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
     engines: {node: '>=8.6.0'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -2183,7 +2181,7 @@ packages:
       '@types/glob': 7.2.0
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.11
+      fast-glob: 3.2.12
       glob: 7.2.3
       ignore: 5.2.0
       merge2: 1.4.1
@@ -2196,7 +2194,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.11
+      fast-glob: 3.2.12
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
