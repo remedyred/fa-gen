@@ -56,7 +56,8 @@ export async function useFa(app, icon_aliases): Promise<void> {
 	const iconDefaultPrefixes = {}
 	for (const [prefixName, prefixGroup] of Object.entries(definitions)) {
 		for (const prefixIconName in prefixGroup) {
-			(iconDefaultPrefixes[prefixIconName] = iconDefaultPrefixes[prefixIconName] || []).push(prefixName)
+			iconDefaultPrefixes[prefixIconName] ||= []
+			iconDefaultPrefixes[prefixIconName].push(prefixName)
 		}
 	}
 
