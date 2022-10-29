@@ -8,7 +8,7 @@ specifiers:
   '@snickbit/node-cli': ~3.0.4
   '@snickbit/node-utilities': ~4.4.10
   '@snickbit/out': ~2.0.37
-  '@snickbit/semantic-release': ^1.5.3
+  '@snickbit/semantic-release': 1.6.1
   '@snickbit/utilities': ~3.4.3
   '@types/node': 18.6.4
   '@urql/core': ~3.0.1
@@ -18,7 +18,7 @@ specifiers:
   graphql: ~16.6.0
   isomorphic-unfetch: ~3.1.0
   quasar: ^2.7.7
-  semantic-release: ^19.0.5
+  semantic-release: 19.0.5
   shx: 0.3.4
   tsup: 6.2.3
   typescript: 4.8.4
@@ -42,7 +42,7 @@ optionalDependencies:
 devDependencies:
   '@snickbit/eslint-config': 1.3.7_ypn2ylkkyfa5i233caldtndbqa
   '@snickbit/indexer': 2.5.25
-  '@snickbit/semantic-release': 1.5.4_semantic-release@19.0.5
+  '@snickbit/semantic-release': 1.6.1_semantic-release@19.0.5
   '@types/node': 18.6.4
   concurrently: 7.4.0
   esbuild: 0.15.10
@@ -595,9 +595,9 @@ packages:
     resolution: {integrity: sha512-Qy77SU9BE/AcHldppsspEFoLxxa9glB+bd5MNs4rpeBG8YCBbc+jRuZ0fWCn/u44ix5jlqi/rY5hugw7XG1BMQ==}
     engines: {node: '>= 12'}
 
-  /@snickbit/semantic-release/1.5.4_semantic-release@19.0.5:
-    resolution: {integrity: sha512-lRObw7KgWYseKtxVTYncuyIwBfaBLIq70I7VpiYnEQGItixsK8o/QpvTPrVxXq8NE5neO18PgtqqInbBb/bvjg==}
-    engines: {node: '>= 12'}
+  /@snickbit/semantic-release/1.6.1_semantic-release@19.0.5:
+    resolution: {integrity: sha512-PNIlMWO4UzHQPupT2EF79hSrJuefBXFCBKpQrngMcNGV+2jS9wzFwsNFnTNE9eNb5zWMyzGCjkImkWX0APfmAw==}
+    engines: {node: '>= 14.17'}
     dependencies:
       '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
       '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.5
