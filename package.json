@@ -61,7 +61,7 @@
 		"@snickbit/node-utilities": "~4.4.10",
 		"@snickbit/out": "~2.0.37",
 		"@snickbit/utilities": "~3.4.3",
-		"@urql/core": "~3.0.1",
+		"@urql/core": "~3.1.0",
 		"graphql": "~16.6.0",
 		"isomorphic-unfetch": "~3.1.0"
 	},
