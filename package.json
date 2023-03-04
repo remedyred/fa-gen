@@ -68,14 +68,14 @@
 	"devDependencies": {
 		"@snickbit/eslint-config": "1.3.9",
 		"@snickbit/indexer": "2.5.28",
-		"@snickbit/semantic-release": "1.6.1",
+		"@snickbit/semantic-release": "1.6.3",
 		"@types/node": "18.6.4",
 		"concurrently": "7.4.0",
-		"esbuild": "0.15.10",
+		"esbuild": "0.17.11",
 		"eslint": "8.24.0",
 		"semantic-release": "19.0.5",
 		"shx": "0.3.4",
-		"tsup": "6.2.3",
+		"tsup": "6.6.3",
 		"typescript": "4.8.4"
 	},
 	"optionalDependencies": {
